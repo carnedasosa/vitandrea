@@ -1028,28 +1028,28 @@ footer {
   }
 
   /* Mobile Active Feedback on Touch */
-  .stat-card:active {
+  .stat-card.touched {
     transform: scale(0.97);
     border-color: var(--border-hover);
     background: var(--bg-card-hover);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.1s ease;
   }
-  .stat-card:active::before {
+  .stat-card.touched::before {
     transform: scaleX(1);
   }
   
-  .prog-card:active {
+  .prog-card.touched {
     transform: scale(0.97);
     background: var(--bg-card-hover);
     border-color: var(--border-hover);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.1s ease;
   }
-  .prog-card:active::before {
+  .prog-card.touched::before {
     transform: scaleX(1);
   }
-  .prog-card:active .prog-icon {
+  .prog-card.touched .prog-icon {
     background: var(--accent-grad);
     border-color: transparent;
     color: #0A0A0A;

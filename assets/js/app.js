@@ -55,3 +55,24 @@ window.addEventListener('resize', () => {
     document.body.classList.remove('no-scroll');
   }
 });
+
+// Mobile Card Touch Feedback
+// iOS Safari ignores :active on non-anchor elements — we use touch events instead
+function addTouchFeedback(selector) {
+  document.querySelectorAll(selector).forEach(card => {
+    card.addEventListener('touchstart', () => {
+      card.classList.add('touched');
+    }, { passive: true });
+
+    card.addEventListener('touchend', () => {
+      setTimeout(() => card.classList.remove('touched'), 200);
+    }, { passive: true });
+
+    card.addEventListener('touchcancel', () => {
+      card.classList.remove('touched');
+    }, { passive: true });
+  });
+}
+
+addTouchFeedback('.stat-card');
+addTouchFeedback('.prog-card');
